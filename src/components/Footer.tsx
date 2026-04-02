@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
           <div className="md:col-span-6">
             <h2 className="text-6xl md:text-8xl mb-8">STAY <br /> <span className="text-stroke">CONNECTED</span></h2>
-            <p className="text-xl opacity-70 max-w-md mb-12">
+            <p className="text-xl opacity-90 max-w-md mb-12">
               Sign up for my newsletter to get early access to new prints, 
               comic updates, and exclusive tutorials.
             </p>
@@ -31,11 +31,11 @@ export const Footer: React.FC = () => {
 
           <div className="md:col-span-3">
             <h4 className="text-2xl mb-6">NAVIGATION</h4>
-            <ul className="space-y-4 font-black uppercase tracking-tighter text-xl">
-              <li><a href="#work" className="hover:text-accent-red transition-colors">Work</a></li>
-              <li><a href="#shop" className="hover:text-accent-red transition-colors">Shop</a></li>
-              <li><a href="#learn" className="hover:text-accent-red transition-colors">Learn</a></li>
-              <li><a href="#" className="hover:text-accent-red transition-colors">About</a></li>
+            <ul className="space-y-4 font-black uppercase tracking-normal text-xl">
+              <li><a href="#work" className="hover:text-accent-red transition-colors block py-1">Work</a></li>
+              <li><a href="#shop" className="hover:text-accent-red transition-colors block py-1">Shop</a></li>
+              <li><a href="#learn" className="hover:text-accent-red transition-colors block py-1">Learn</a></li>
+              <li><a href="#" className="hover:text-accent-red transition-colors block py-1">About</a></li>
             </ul>
           </div>
 
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t-2 border-white/10 gap-8">
-          <p className="opacity-50 font-black uppercase tracking-widest text-sm">
+          <p className="opacity-80 font-black uppercase tracking-[0.2em] text-[10px] sm:text-xs">
             © 2024 MANOEL TAYLOR. ALL RIGHTS RESERVED.
           </p>
           <button 

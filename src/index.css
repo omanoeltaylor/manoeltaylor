@@ -8,12 +8,17 @@
   
   --font-display: "Space Grotesk", "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
+
+  --container-max-width: 1200px;
 }
 
 @layer base {
   body {
     @apply bg-primary-bg text-white font-body antialiased selection:bg-accent-red selection:text-white;
     position: relative;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    font-size: 85%;
   }
   
   body::after {
@@ -27,7 +32,26 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-black uppercase tracking-tighter leading-[0.8];
+    @apply font-display font-black uppercase tracking-tight;
+    line-height: 1.1;
+  }
+
+  .text-title {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.0;
+  }
+  
+  .section-container {
+    @apply mx-auto w-full px-4 md:px-6;
+    max-width: var(--container-max-width);
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .text-label {
+    @apply font-black uppercase tracking-widest text-[10px] sm:text-xs opacity-90;
   }
 }
 

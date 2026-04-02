@@ -1,0 +1,234 @@
+backend:
+  name: github
+  repo: omanoeltaylor/manoeltaylor
+  branch: main
+  # Auth será tratada pelas Cloudflare Pages Functions em /api/auth e /api/callback
+  # Em produção, base_url = URL do seu site no Cloudflare Pages
+  # Em dev local, pode usar: npx decap-server (proxy local)
+  auth_endpoint: api/auth
+
+# Editorial workflow — cria sistema de draft/review/publicado
+publish_mode: editorial_workflow
+
+# Locale
+locale: "pt"
+
+# Media
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# ─────────────────────────────────────────────
+# COLEÇÕES
+# ─────────────────────────────────────────────
+
+collections:
+
+  # ═══════════════════════════════════════════
+  # BLOG / CONTEÚDO
+  # ═══════════════════════════════════════════
+  - name: "blog"
+    label: "📝 Blog / Conteúdo"
+    label_singular: "Artigo"
+    description: "Artigos, análises e textos sobre quadrinhos, representatividade e cultura pop."
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ["date", "title"]
+    summary: "{{title}} — {{date | date('DD/MM/YYYY')}}"
+    editor:
+      preview: true
+    fields:
+      - label: "Título"
+        name: "title"
+        widget: "string"
+        hint: "Título completo do artigo"
+      - label: "Categoria"
+        name: "category"
+        widget: "string"
+        hint: "Ex: Análise · Marvel · História (separe com · )"
+      - label: "Data de Publicação"
+        name: "date"
+        widget: "datetime"
+        date_format: "DD/MM/YYYY"
+        time_format: "HH:mm"
+      - label: "Imagem Destaque"
+        name: "imageUrl"
+        widget: "image"
+        hint: "Imagem principal que aparece na listagem e no topo do artigo"
+      - label: "Resumo"
+        name: "excerpt"
+        widget: "text"
+        hint: "2-3 frases que aparecem na listagem do blog"
+      - label: "Conteúdo"
+        name: "body"
+        widget: "markdown"
+        hint: "Use # para títulos, > para citações, **negrito** etc."
+
+  # ═══════════════════════════════════════════
+  # PORTFÓLIO
+  # ═══════════════════════════════════════════
+  - name: "artworks"
+    label: "🎨 Portfólio"
+    label_singular: "Arte"
+    description: "Artes, ilustrações e trabalhos do portfólio."
+    folder: "src/content/artworks"
+    create: true
+    summary: "{{title}} — {{category}}"
+    editor:
+      preview: true
+    fields:
+      - label: "Título da Arte"
+        name: "title"
+        widget: "string"
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options: ["Quadrinhos", "Ilustração", "Arte Conceitual", "Digital"]
+      - label: "Imagem Principal"
+        name: "imageUrl"
+        widget: "image"
+        hint: "A imagem que aparece no grid do portfólio"
+      - label: "Descrição"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "Texto opcional sobre a obra"
+      - label: "Ano"
+        name: "year"
+        widget: "string"
+        required: false
+      - label: "Variações / Detalhes"
+        name: "variations"
+        widget: "list"
+        required: false
+        hint: "Imagens adicionais (detalhes, close-ups, variações)"
+        field:
+          label: "Imagem"
+          name: "url"
+          widget: "image"
+
+  # ═══════════════════════════════════════════
+  # LOJA
+  # ═══════════════════════════════════════════
+  - name: "products"
+    label: "🛒 Loja"
+    label_singular: "Produto"
+    description: "Prints, zines, pincéis e outros produtos à venda."
+    folder: "src/content/products"
+    create: true
+    summary: "{{title}} — R$ {{price}}"
+    editor:
+      preview: true
+    fields:
+      - label: "Nome do Produto"
+        name: "title"
+        widget: "string"
+      - label: "Preço (R$)"
+        name: "price"
+        widget: "number"
+        value_type: "float"
+        min: 0
+        hint: "Valor em reais (ex: 45.00)"
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options: ["Prints", "Educação", "Digital", "Quadrinhos"]
+      - label: "Imagem Principal"
+        name: "imageUrl"
+        widget: "image"
+        hint: "Foto do produto (recomendado: 600×800px)"
+      - label: "Descrição"
+        name: "description"
+        widget: "markdown"
+        hint: "Descrição detalhada do produto"
+      - label: "Especificações"
+        name: "specs"
+        widget: "list"
+        hint: "Ex: Papel Fine Art, Assinado, Tamanho A3"
+        field:
+          label: "Item"
+          name: "item"
+          widget: "string"
+      - label: "Tamanhos Disponíveis"
+        name: "sizes"
+        widget: "list"
+        hint: "Ex: A3, A2, Digital"
+        field:
+          label: "Tamanho"
+          name: "val"
+          widget: "string"
+
+  # ═══════════════════════════════════════════
+  # PROJETOS
+  # ═══════════════════════════════════════════
+  - name: "projects"
+    label: "📂 Projetos"
+    label_singular: "Projeto"
+    description: "Projetos institucionais, HQs publicadas e colaborações."
+    folder: "src/content/projects"
+    create: true
+    summary: "{{title}} — {{year}}"
+    fields:
+      - label: "Título do Projeto"
+        name: "title"
+        widget: "string"
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options: ["Quadrinhos", "Ilustração", "Arte Conceitual", "Institucional"]
+      - label: "Imagem"
+        name: "imageUrl"
+        widget: "image"
+        hint: "Imagem de capa do projeto"
+      - label: "Descrição"
+        name: "description"
+        widget: "text"
+        hint: "Breve descrição do projeto"
+      - label: "Ano"
+        name: "year"
+        widget: "string"
+      - label: "Instituição / Editora"
+        name: "institution"
+        widget: "string"
+        required: false
+
+  # ═══════════════════════════════════════════
+  # PALESTRAS
+  # ═══════════════════════════════════════════
+  - name: "lectures"
+    label: "🎤 Palestras"
+    label_singular: "Palestra"
+    description: "Palestras, workshops e painéis realizados."
+    folder: "src/content/lectures"
+    create: true
+    summary: "{{title}} — {{institution}} ({{year}})"
+    fields:
+      - label: "Título"
+        name: "title"
+        widget: "string"
+      - label: "Instituição"
+        name: "institution"
+        widget: "string"
+        hint: "Nome da universidade, evento ou organização"
+      - label: "Ano"
+        name: "year"
+        widget: "string"
+      - label: "Tipo"
+        name: "category"
+        widget: "select"
+        options: ["Workshop", "Painel", "Palestra", "Masterclass"]
+      - label: "Público-Alvo"
+        name: "audience"
+        widget: "string"
+        hint: "Ex: Estudantes de Arte, Público Geral"
+      - label: "Duração"
+        name: "duration"
+        widget: "string"
+        hint: "Ex: 2 Horas, 4 Horas"
+      - label: "Formato"
+        name: "format"
+        widget: "select"
+        options: ["Presencial", "Online", "Híbrido"]
+      - label: "Descrição"
+        name: "description"
+        widget: "text"

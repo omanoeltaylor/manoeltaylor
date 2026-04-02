@@ -29,11 +29,11 @@ export const Learn: React.FC = () => {
   ];
 
   return (
-    <section id="learn" className="py-24 bg-secondary-bg border-y-4 border-white">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="learn" className="bg-secondary-bg border-y-4 border-white">
+      <div className="section-container section-padding">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-5">
-            <h2 className="text-7xl md:text-9xl mb-8">LEARN <br /> <span className="text-stroke">THE CRAFT</span></h2>
+            <h2 className="text-title mb-8">LEARN <br /> <span className="text-stroke">THE CRAFT</span></h2>
             <p className="text-xl opacity-80 mb-12">
               I believe in sharing knowledge. Here you'll find resources, 
               tutorials, and behind-the-scenes looks at my creative process. 

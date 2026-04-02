@@ -32,7 +32,7 @@ export default function App() {
         <div className="min-h-screen flex flex-col bg-primary-bg text-white">
           <Navbar />
           <Cart />
-          <main className="flex-grow max-w-[1600px] mx-auto w-full px-4 md:px-12 lg:px-20">
+          <main className="flex-grow w-full">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />

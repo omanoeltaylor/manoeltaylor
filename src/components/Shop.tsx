@@ -11,10 +11,10 @@ interface ShopProps {
 
 export const Shop: React.FC<ShopProps> = ({ onAddToCart }) => {
   return (
-    <section id="shop" className="py-24 bg-primary-bg">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="shop" className="bg-primary-bg">
+      <div className="section-container section-padding">
         <div className="flex items-center gap-8 mb-16">
-          <h2 className="text-7xl md:text-9xl">THE <br /> <span className="text-stroke">SHOP</span></h2>
+          <h2 className="text-title">THE <br /> <span className="text-stroke">SHOP</span></h2>
           <div className="hidden md:block flex-1 h-1 bg-white"></div>
           <ShoppingBag size={64} className="text-accent-red hidden md:block" />
         </div>

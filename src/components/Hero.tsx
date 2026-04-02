@@ -5,8 +5,8 @@ import { ArrowDownRight } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen pt-20 flex flex-col justify-center overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+    <section className="relative overflow-hidden">
+      <div className="section-container section-padding grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         
         <div className="md:col-span-8 z-10">
           <motion.div
@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h2 className="text-[15vw] md:text-[12vw] leading-[0.85] mb-4">
+            <h2 className="text-title mb-4">
               VISUAL <br />
               <span className="text-stroke">NARRATIVE</span> <br />
               <span className="red-paint-stroke">ANARCHY</span>

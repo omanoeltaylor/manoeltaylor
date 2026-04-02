@@ -10,16 +10,17 @@ export const Navbar = () => {
   const { cartCount, setIsCartOpen } = useCart();
 
   const navLinks = [
+    { name: 'início', path: '/' },
     { name: 'sobre', path: '/about' },
     { name: 'portfólio', path: '/portfolio' },
     { name: 'loja', path: '/shop' },
-    { name: 'hub', path: '/content' },
+    { name: 'blog', path: '/content' },
     { name: 'contato', path: '/contact' },
   ];
 
   return (
     <nav className="fixed top-0 w-full z-50 py-6 pointer-events-none">
-      <div className="max-w-[1600px] mx-auto w-full px-4 md:px-12 lg:px-20 flex justify-between items-start">
+      <div className="section-container flex justify-between items-start">
         <Link 
           to="/" 
           className="pointer-events-auto cursor-pointer text-4xl font-black tracking-tighter uppercase leading-none bg-white text-black p-2 hover:bg-accent-red hover:text-white transition-colors"
@@ -95,10 +96,10 @@ export const Navbar = () => {
 
 export const Footer = () => {
   return (
-    <footer className="mt-20 md:mt-40 border-t-4 md:border-t-8 border-white bg-primary-bg">
-      <div className="max-w-[1600px] mx-auto w-full px-4 md:px-12 lg:px-20 py-10 md:py-20 flex flex-col md:flex-row justify-between items-start md:items-end">
+    <footer className="border-t-4 md:border-t-8 border-white bg-primary-bg">
+      <div className="section-container section-padding flex flex-col md:flex-row justify-between items-start md:items-end">
         <div className="md:w-2/3">
-          <h2 className="font-display font-black uppercase leading-[0.8] tracking-tighter text-[15vw] md:text-[10vw]">TCHAU.</h2>
+          <h2 className="font-display font-black uppercase tracking-tighter text-title">TCHAU.</h2>
           <p className="text-lg md:text-xl font-black uppercase max-w-sm mt-4">CRIANDO PARA AS MARGENS, PENSADO PARA O CAOS.</p>
         </div>
         <div className="text-left md:text-right mt-12 md:mt-0 w-full md:w-auto">

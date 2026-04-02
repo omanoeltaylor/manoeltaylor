@@ -1,7 +1,10 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ARTICLES } from '../constants';
-import { ArrowLeft } from 'lucide-react';
+import { getArticles } from '../lib/content';
+import { ArrowLeft, Share2 } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+
+const ARTICLES = getArticles();
 
 const ArticlePage = () => {
   const { id } = useParams();
@@ -10,75 +13,65 @@ const ArticlePage = () => {
   if (!article) return <div className="pt-40 text-center text-4xl font-black">ARTIGO NÃO ENCONTRADO</div>;
 
   return (
-    <div className="pt-32 min-h-screen pb-20 overflow-hidden">
-      <div className="max-w-5xl mx-auto relative">
-        <Link to="/content" className="inline-flex items-center gap-2 bg-white text-black px-6 py-2 font-black hover:bg-accent-red hover:text-white transition-all mb-12 text-xl rotate-[-2deg] brutalist-shadow">
-          <ArrowLeft size={24} /> VOLTAR
+    <div className="section-container section-padding min-h-screen pb-40 overflow-hidden relative">
+      <div className="max-w-4xl mx-auto relative content-area">
+        <Link to="/content" className="inline-flex items-center gap-2 text-white font-black hover:text-accent-red transition-all mb-16 text-lg uppercase tracking-widest border-b-2 border-white/20 pb-2">
+          <ArrowLeft size={18} /> VOLTAR AO BLOG
         </Link>
 
-        <header className="mb-20 relative">
-          <div className="absolute -top-10 -left-10 text-[20vw] opacity-5 font-black pointer-events-none select-none text-stroke">
-            {article.category}
-          </div>
-          <span className="text-accent-red font-black text-2xl mb-4 block uppercase tracking-widest relative z-10">{article.category} • {article.date}</span>
-          <h1 className="text-6xl md:text-[10vw] mb-12 leading-[0.8] uppercase font-black tracking-tighter relative z-10">{article.title}</h1>
+        {/* HEADER - Clean and Focused */}
+        <header className="mb-20 text-center lg:text-left">
+          <span className="text-accent-red font-black text-sm md:text-base mb-6 block uppercase tracking-widest">{article.category} • {article.date}</span>
+          <h1 className="text-5xl md:text-7xl mb-12 leading-[1.0] uppercase font-black tracking-tight">{article.title}</h1>
           
-          <div className="border-8 border-white p-2 brutalist-shadow mb-10 relative z-10 rotate-1">
+          <div className="bg-black border-2 border-white/10 overflow-hidden mb-16 max-w-3xl mx-auto lg:mx-0">
             <img 
               src={article.imageUrl} 
               alt={article.title} 
-              className="w-full aspect-video object-cover grayscale brightness-75 contrast-125"
+              className="w-full h-auto grayscale brightness-90 contrast-110"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute -bottom-8 -left-8 bg-accent-yellow text-black p-6 font-black text-2xl rotate-[-5deg] border-4 border-black">
-              LEIA ISSO
-            </div>
           </div>
         </header>
 
-        <article className="relative z-10">
-          <div className="bg-white text-black p-10 md:p-20 brutalist-shadow-red mb-20 rotate-[-0.5deg]">
-            <p className="text-3xl md:text-5xl font-black uppercase leading-[0.9] tracking-tight mb-12">
+        {/* CONTENT - Rendered from markdown */}
+        <article className="max-w-2xl mx-auto lg:mx-0">
+          {article.excerpt && (
+            <p className="text-2xl md:text-3xl font-bold leading-snug mb-16 text-accent-yellow">
               {article.excerpt}
             </p>
-            
-            <div className="space-y-12 text-black font-bold text-xl leading-snug uppercase">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-              
-              <h2 className="text-5xl md:text-7xl text-accent-red uppercase font-black leading-[0.8] my-16">
-                A EVOLUÇÃO DA <br/><span className="text-stroke" style={{ WebkitTextStroke: '2px black', color: 'transparent' }}>FORMA</span>
-              </h2>
-              
-              <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 my-20">
-                <div className="border-4 border-black p-2 rotate-2">
-                  <img src="https://picsum.photos/seed/art1/800/800" alt="Art" className="w-full grayscale" referrerPolicy="no-referrer" />
-                </div>
-                <div className="border-4 border-black p-2 -rotate-2">
-                  <img src="https://picsum.photos/seed/art2/800/800" alt="Art" className="w-full grayscale" referrerPolicy="no-referrer" />
-                </div>
-              </div>
-
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              </p>
+          )}
+          
+          {article.content ? (
+            <div className="prose prose-invert prose-lg max-w-none 
+              [&_h1]:text-4xl [&_h1]:md:text-5xl [&_h1]:text-white [&_h1]:uppercase [&_h1]:font-black [&_h1]:leading-tight [&_h1]:my-16 [&_h1]:tracking-tight
+              [&_h2]:text-4xl [&_h2]:md:text-5xl [&_h2]:text-white [&_h2]:uppercase [&_h2]:font-black [&_h2]:leading-tight [&_h2]:my-16 [&_h2]:tracking-tight
+              [&_p]:text-gray-300 [&_p]:font-medium [&_p]:text-lg [&_p]:md:text-xl [&_p]:leading-relaxed [&_p]:mb-10
+              [&_blockquote]:border-l-8 [&_blockquote]:border-accent-red [&_blockquote]:pl-8 [&_blockquote]:py-4 [&_blockquote]:my-20
+              [&_blockquote_p]:text-2xl [&_blockquote_p]:md:text-3xl [&_blockquote_p]:text-white [&_blockquote_p]:font-black [&_blockquote_p]:italic [&_blockquote_p]:uppercase [&_blockquote_p]:leading-tight
+            ">
+              <ReactMarkdown>{article.content}</ReactMarkdown>
             </div>
-          </div>
+          ) : (
+            <div className="space-y-10 text-gray-300 font-medium text-lg md:text-xl leading-relaxed">
+              <p>Conteúdo em breve.</p>
+            </div>
+          )}
         </article>
 
-        <div className="mt-32 pt-20 border-t-8 border-white">
-          <h3 className="text-6xl md:text-8xl font-black mb-12 leading-none">COMPARTILHE O <br/><span className="text-accent-red">MANIFESTO</span></h3>
-          <div className="flex flex-wrap gap-6">
-            {['TWITTER', 'FACEBOOK', 'LINKEDIN', 'EMAIL'].map(s => (
-              <button key={s} className="px-10 py-4 border-4 border-white hover:bg-white hover:text-black font-black text-2xl transition-all brutalist-shadow hover:shadow-none">
-                {s}
-              </button>
-            ))}
+        {/* SHARE SECTION */}
+        <div className="mt-32 pt-16 border-t border-white/10">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+            <h3 className="text-2xl font-black uppercase tracking-widest flex items-center gap-4">
+              <Share2 className="text-accent-red" /> COMPARTILHE O ARTIGO
+            </h3>
+            <div className="flex flex-wrap gap-4">
+              {['TW', 'FB', 'LI', 'MAIL'].map(s => (
+                <button key={s} className="w-12 h-12 flex items-center justify-center border-2 border-white/20 hover:border-accent-red hover:bg-accent-red transition-all font-black text-xs">
+                  {s}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

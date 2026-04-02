@@ -38,7 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick, activeSe
             <button
               key={item.id}
               onClick={() => onSectionChange(item.id)}
-              className={`text-lg font-black uppercase tracking-tighter transition-all hover:text-accent-red ${
+              className={`text-base lg:text-lg font-black uppercase tracking-normal transition-all hover:text-accent-red ${
                 activeSection === item.id ? 'text-accent-red underline underline-offset-8' : ''
               }`}
             >
@@ -51,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick, activeSe
           >
             <ShoppingCart size={24} />
             {cartCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-accent-red text-white text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full border-2 border-white">
+              <span className="absolute -top-3 -right-3 bg-accent-red text-white text-[10px] font-black w-6 h-6 flex items-center justify-center rounded-full border-2 border-white shadow-sm">
                 {cartCount}
               </span>
             )}
