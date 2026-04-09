@@ -11,6 +11,7 @@ import ArticlePage from './pages/ArticlePage';
 import Projects from './pages/Projects';
 import Lectures from './pages/Lectures';
 import Contact from './pages/Contact';
+import Checkout from './pages/Checkout';
 import CheckoutPage from './pages/CheckoutPage';
 import SuccessPage from './pages/SuccessPage';
 import { CartProvider } from './context/CartContext';
@@ -44,7 +45,8 @@ export default function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/lectures" element={<Lectures />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/checkout" element={<CheckoutPage />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/checkout-old" element={<CheckoutPage />} />
               <Route path="/success" element={<SuccessPage />} />
             </Routes>
           </main>

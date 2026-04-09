@@ -268,6 +268,24 @@ collections:
             name: "copyright"
             widget: "string"
 
+      - label: "Loja e Checkout"
+        name: "store"
+        file: "src/content/settings/store.json"
+        fields:
+          - label: "Valor do Frete Fixo (R$)"
+            name: "shippingCost"
+            widget: "number"
+            value_type: "float"
+            hint: "Valor fixo cobrado para envio das obras para o Brasil (Ex: 25.00)"
+          - label: "Chave Pix (Recebimento)"
+            name: "pixKey"
+            widget: "string"
+            hint: "Chave Pix para onde o usuário deve transferir na hora do checkout"
+          - label: "Número do WhatsApp"
+            name: "whatsappNumber"
+            widget: "string"
+            hint: "Apenas números, com DDI e DDD (Ex: 5511999999999)"
+
   # ═══════════════════════════════════════════
   # PÁGINAS ESTÁTICAS
   # ═══════════════════════════════════════════
