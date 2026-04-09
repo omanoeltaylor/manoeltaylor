@@ -2,6 +2,7 @@
 import React from 'react';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import globalSettings from '../content/settings/global.json';
 
 interface NavbarProps {
   cartCount: number;
@@ -13,12 +14,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick, activeSection, onSectionChange }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const navItems = [
-    { id: 'work', label: 'Work' },
-    { id: 'shop', label: 'Shop' },
-    { id: 'learn', label: 'Learn' },
-    { id: 'about', label: 'About' },
-  ];
+  const navItems = globalSettings.navItems;
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-primary-bg border-b-4 border-white">

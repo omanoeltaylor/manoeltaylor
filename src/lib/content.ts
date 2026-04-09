@@ -177,3 +177,30 @@ export function getLectures(): Lecture[] {
     };
   });
 }
+
+const pageFiles = import.meta.glob('../content/pages/*.md', { eager: true, query: '?raw', import: 'default' }) as Record<string, string>;
+
+export interface AboutPageData {
+  title: string;
+  badge: string;
+  manifesto: string;
+  imageUrl: string;
+  trajectory: { year: string; title: string; desc: string }[];
+  body: string;
+}
+
+export function getAboutPage(): AboutPageData {
+  const raw = pageFiles['../content/pages/about.md'];
+  if (!raw) {
+    return { title: 'MANOEL TAYLOR', badge: 'DESDE 1994', manifesto: 'MANIFESTO', imageUrl: '', trajectory: [], body: '' };
+  }
+  const { data, content } = parseFrontmatter(raw);
+  return {
+    title: data.title || 'MANOEL TAYLOR',
+    badge: data.badge || 'DESDE 1994',
+    manifesto: data.manifesto || 'MANIFESTO',
+    imageUrl: data.imageUrl || '',
+    trajectory: Array.isArray(data.trajectory) ? data.trajectory : [],
+    body: content,
+  };
+}

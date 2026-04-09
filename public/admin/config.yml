@@ -233,3 +233,72 @@ collections:
       - label: "Descrição"
         name: "description"
         widget: "text"
+
+  # ═══════════════════════════════════════════
+  # CONFIGURAÇÕES GLOBAIS
+  # ═══════════════════════════════════════════
+  - name: "settings"
+    label: "⚙️ Configurações"
+    editor:
+      preview: false
+    files:
+      - label: "Menu e Rodapé"
+        name: "global"
+        file: "src/content/settings/global.json"
+        fields:
+          - label: "Links do Menu"
+            name: "navItems"
+            widget: "list"
+            fields:
+              - {label: "ID (âncora)", name: "id", widget: "string"}
+              - {label: "Nome no Menu", name: "label", widget: "string"}
+          - label: "Título do Rodapé"
+            name: "footerHeading"
+            widget: "string"
+          - label: "Texto da Newsletter (Rodapé)"
+            name: "footerText"
+            widget: "text"
+          - label: "Links Sociais"
+            name: "socialLinks"
+            widget: "list"
+            fields:
+              - {label: "Rede Social", name: "platform", widget: "select", options: ["Instagram", "Twitter", "Mail", "Behance", "ArtStation"]}
+              - {label: "URL", name: "url", widget: "string"}
+          - label: "Texto final (Copyright)"
+            name: "copyright"
+            widget: "string"
+
+  # ═══════════════════════════════════════════
+  # PÁGINAS ESTÁTICAS
+  # ═══════════════════════════════════════════
+  - name: "pages"
+    label: "📄 Páginas"
+    editor:
+      preview: false
+    files:
+      - label: "Sobre (About)"
+        name: "about"
+        file: "src/content/pages/about.md"
+        fields:
+          - label: "Nome Principal"
+            name: "title"
+            widget: "string"
+          - label: "Marcador de Fundo (Grande)"
+            name: "manifesto"
+            widget: "string"
+          - label: "Selo (Badge) na Imagem"
+            name: "badge"
+            widget: "string"
+          - label: "Imagem (Foto do Artista)"
+            name: "imageUrl"
+            widget: "image"
+          - label: "Trajetória"
+            name: "trajectory"
+            widget: "list"
+            fields:
+              - {label: "Ano", name: "year", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Descrição", name: "desc", widget: "text"}
+          - label: "Biografia e Textos"
+            name: "body"
+            widget: "markdown"
