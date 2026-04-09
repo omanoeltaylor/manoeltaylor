@@ -5,7 +5,7 @@ backend:
   # Auth será tratada pelas Cloudflare Pages Functions em /api/auth e /api/callback
   # Em produção, base_url = URL do seu site no Cloudflare Pages
   # Em dev local, pode usar: npx decap-server (proxy local)
-  auth_endpoint: api/auth
+  auth_endpoint: /api/auth
 
 # Editorial workflow — cria sistema de draft/review/publicado
 publish_mode: editorial_workflow
