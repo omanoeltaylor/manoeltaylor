@@ -1,7 +1,7 @@
 ---
 title: "A arte como resistência: filmes e quadrinhos que abordam o tema"
 category: Artigos
-date: 09/04/2026T15:22
+date: 09/04/2026T16:00
 imageUrl: /uploads/67c1b88e6c13cb26c97b1663_99894filme-marighella-tera-sessoes-especiais-em-salvador-na-semana-da-consciencia-negra-3.jpg
 excerpt: "resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo
   resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo resumo
