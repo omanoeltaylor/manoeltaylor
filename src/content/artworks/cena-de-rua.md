@@ -1,5 +1,5 @@
 ---
-title: "Cena de Rua"
-category: "Quadrinhos"
-imageUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800"
+title: Cena de Rua
+category: Quadrinhos
+imageUrl: /uploads/inshot_20230905_185515651.jpg
 ---
