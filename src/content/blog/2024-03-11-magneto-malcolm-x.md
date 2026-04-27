@@ -1,9 +1,12 @@
 ---
-title: "Magneto e Malcolm X vs. Professor X e Dr. King — A alegoria aos movimentos Afro-Americanos nos anos 50 e 60"
-category: "Análise · Marvel · História"
-date: 2024-03-11T00:30:00Z
-imageUrl: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=1200"
-excerpt: "A rivalidade mais famosa dos X-Men nunca foi só sobre poderes. É um espelho direto do debate entre integração e separatismo que dividiu o movimento negro americano. Taylor desmonta cada camada."
+title: Magneto e Malcolm X vs. Professor X e Dr. King — A alegoria aos
+  movimentos Afro-Americanos nos anos 50 e 60
+category: Análise · Marvel · História
+date: 2024-03-11T00:30:00.000Z
+imageUrl: https://miro.medium.com/v2/0*ZSiI07XLpH3dFy-b.jpg
+excerpt: A rivalidade mais famosa dos X-Men nunca foi só sobre poderes. É um
+  espelho direto do debate entre integração e separatismo que dividiu o
+  movimento negro americano. Taylor desmonta cada camada.
 ---
 # Reflexão sobre Malcolm X e Magneto
 
