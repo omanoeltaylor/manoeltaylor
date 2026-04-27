@@ -1,9 +1,11 @@
 ---
-title: "Gibi — O surgimento da nomenclatura no Brasil"
-category: "História · Brasil · Cultura pop"
-date: 2022-09-20T00:00:00Z
-imageUrl: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=1200"
-excerpt: "Como uma palavra se tornou sinônimo de um formato inteiro? A história do \"gibi\" vai além da etimologia — ela conta como os quadrinhos chegaram ao Brasil e quem os recebeu."
+title: Gibi — O surgimento da nomenclatura no Brasil
+category: História · Brasil · Cultura pop
+date: 2022-09-20T00:00:00.000Z
+imageUrl: /uploads/gibi.png
+excerpt: Como uma palavra se tornou sinônimo de um formato inteiro? A história
+  do "gibi" vai além da etimologia — ela conta como os quadrinhos chegaram ao
+  Brasil e quem os recebeu.
 ---
 # Gibi — De Palavra a Cultura
 
