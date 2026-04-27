@@ -2,7 +2,7 @@
 title: Dwayne McDuffie — Um dos pilares da revolução na Gibisfera
 category: Perfil · Milestone Media · Representatividade
 date: 2023-06-15T00:00:00.000Z
-imageUrl: https://www.thepopverse.com/_next/image?url=https%3A%2F%2Fmedia.thepopverse.com%2Fmedia%2Fdwayneantidotetrustsdcc-qfcbevid1hofjptkhu3lbnacd2.jpg&w=1280&q=75
+imageUrl: /uploads/dwayne.png
 excerpt: Antes de Static Shock existir, McDuffie já estava provando que
   representatividade e qualidade técnica andam juntas. A história do homem que
   mudou o jogo — e por que o mercado demorou tanto para ouvir.
