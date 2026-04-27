@@ -1,11 +1,9 @@
 ---
-title: "teste teste teste teste teste teste "
-price: 15555555
+title: Angela Davis Retrato
+price: 300
 category: Educação
-imageUrl: https://picsum.photos/seed/zine1/600/800
-description: teste teste teste teste teste teste teste teste teste teste teste
-  teste teste teste teste teste teste teste teste teste teste teste teste teste
-  teste teste teste teste teste teste teste teste teste teste v
+imageUrl: /uploads/20220106140612_00002.jpg
+description: Arte em a4, nanquim e marcadores.
 specs:
   - 32 Páginas
   - P&B
