@@ -1,5 +1,0 @@
----
-title: "Fantasma Industrial"
-category: "Quadrinhos"
-imageUrl: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800"
----
