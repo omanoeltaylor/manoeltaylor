@@ -1,9 +1,10 @@
 ---
-title: "Jackie Orames"
-category: "Perfil · Representatividade · Brasil"
-date: 2021-11-10T00:00:00Z
-imageUrl: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&q=80&w=1200"
-excerpt: "Uma das primeiras artistas negras dos quadrinhos brasileiros. Esquecida pela história padrão do setor. Taylor resgata."
+title: Jackie Orames
+category: Perfil · Representatividade · Brasil
+date: 2021-11-10T00:00:00.000Z
+imageUrl: https://wednesdayswomen.com/wp-content/uploads/2020/12/ormes-banner1024x534.webp
+excerpt: Uma das primeiras artistas negras dos quadrinhos. Esquecida pela
+  história padrão do setor. Taylor resgata.
 ---
 # Jackie Orames — A Pioneira Invisível
 
